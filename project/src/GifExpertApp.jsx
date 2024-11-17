@@ -6,11 +6,11 @@ const GifExpertApp = () => {
 
     const [categories, setCategories] = useState(['one', 'Drgon']);
 
-    const onAddCategory = (newCategories) => {
+    const onAddCategory = (newCategory) => {
 
-        if (categories.includes(newCategories)) return
+        if (categories.includes(newCategory)) return;
 
-        setCategories([newCategories, ...categories])
+        setCategories([newCategory, ...categories])
     }
 
 
@@ -19,8 +19,10 @@ const GifExpertApp = () => {
             <h1>GifExpertApp</h1>
 
             <AddCategory
-                /* setCategories={setCategories} */
-                categories={categories}
+                /*  setCategories={setCategories}  */
+                onNewCategory={(e) => onAddCategory(e)}
+
+
             />
 
 
